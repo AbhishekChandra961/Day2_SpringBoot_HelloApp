@@ -3,6 +3,8 @@ package com.bridgelabz.HelloApp.controller;
 import org.apache.catalina.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 public class HelloController {
     @RequestMapping(value="/hello" , method = RequestMethod.GET)
     public String message(){
@@ -19,6 +21,6 @@ public class HelloController {
     }
     @RequestMapping(value="/body",method = RequestMethod.POST)
     public String acceptData(@RequestBody User user){
-        return user.toString();
+        return iUserRepo.save(userData);
     }
 }
